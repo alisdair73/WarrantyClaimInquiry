@@ -111,7 +111,27 @@
 			}
 		},
 		"extends": {
-			"extensions": {}
+			"extensions": {
+				"sap.ui.viewExtensions": {
+					"sap.suite.ui.generic.template.ListReport.view.ListReport": {
+						"ResponsiveTableColumnsExtension|Zwty_C_Warranty_Claims": {
+							"className": "sap.ui.core.Fragment",
+							"fragmentName": "warranty_claim_inquiry.ext.fragment.CustomTableColumns",
+							"type": "XML"
+						},
+						"ResponsiveTableCellsExtension|Zwty_C_Warranty_Claims": {
+							"className": "sap.ui.core.Fragment",
+							"fragmentName": "warranty_claim_inquiry.ext.fragment.CustomTableCells",
+							"type": "XML"
+						}
+					}
+				},
+				"sap.ui.controllerExtensions": {
+					"sap.suite.ui.generic.template.ListReport.view.ListReport": {
+						"controllerName": "warranty_claim_inquiry.ext.controller.ListReportExt"
+					}
+				}
+			}
 		},
 		"contentDensities": {
 			"compact": true,
@@ -141,5 +161,9 @@
 	"sap.platform.hcp": {
 		"_version": "1.2.0",
 		"uri": ""
+	},
+	"sap.platform.abap": {
+		"uri": "/sap/bc/ui5_ui5/sap/zwty_clm_inq/webapp",
+		"_version": "1.1.0"
 	}
 }

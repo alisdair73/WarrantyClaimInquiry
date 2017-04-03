@@ -1,0 +1,14 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Column id="tagColumn" hAlign="Right">
+		<Text text="TAG"/>
+		<customData>
+			<core:CustomData key="p13nData" value='\{"columnKey": "printTag",  "columnIndex" : "99"}'/>
+		</customData>
+	</Column>
+	<Column id="rctiColumn" hAlign="Right">
+		<Text text="RCTI"/>
+		<customData>
+			<core:CustomData key="p13nData" value='\{"columnKey": "rcti",  "columnIndex" : "99"}'/>
+		</customData>
+	</Column>	
+</core:FragmentDefinition>

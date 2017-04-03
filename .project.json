@@ -15,6 +15,11 @@
       "templateId": "ui5template.smarttemplate",
       "templateVersion": "1.40.12",
       "dateTimeStamp": "Fri, 10 Mar 2017 00:50:46 GMT"
+    },
+    {
+      "templateId": "ui5template.listreportextension",
+      "templateVersion": "1.0.0",
+      "dateTimeStamp": "Fri, 10 Mar 2017 01:01:11 GMT"
     }
   ],
   "uiadaptation": {
@@ -45,5 +50,9 @@
       "xml": "fioriXmlAnalysis",
       "js": "fioriJsValidator"
     }
+  },
+  "deploy": {
+    "destination": "DGW",
+    "name": "ZWTY_CLM_INQ"
   }
 }

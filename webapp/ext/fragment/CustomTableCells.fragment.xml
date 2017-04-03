@@ -1,0 +1,4 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+    <Button id="tag" icon="sap-icon://print" tooltip="{i18n>printTAG}" enabled="true" press="onPrintTAG"></Button>
+    <Button id="rcti" icon="sap-icon://pdf-attachment" tooltip="{i18n>printRCTI}" enabled="true" press="onPrintRCTI"></Button>
+</core:FragmentDefinition>
