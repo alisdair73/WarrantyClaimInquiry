@@ -15,21 +15,21 @@
 		},
 		"dataSources": {
 			"mainService": {
-				"uri": "/sap/opu/odata/sap/ZWTY_C_WARRANTY_CLAIMS_CDS/",
+				"uri": "/sap/opu/odata/sap/ZWTY_WTY_INQUIRY_CDS_SRV/",
 				"type": "OData",
 				"settings": {
 					"annotations": [
-						"ZWTY_C_WARRANTY_CLAIMS_CDS_VAN",
+						"ZWTY_WARRANTY_CLAIM_INQ_ANNO_MDL",
 						"localAnnotations"
 					],
 					"localUri": "localService/metadata.xml"
 				}
 			},
-			"ZWTY_C_WARRANTY_CLAIMS_CDS_VAN": {
-				"uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZWTY_C_WARRANTY_CLAIMS_CDS_VAN',Version='0001')/$value/",
+			"ZWTY_WARRANTY_CLAIM_INQ_ANNO_MDL": {
+				"uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZWTY_WARRANTY_CLAIM_INQ_ANNO_MDL',Version='0001')/$value/",
 				"type": "ODataAnnotation",
 				"settings": {
-					"localUri": "localService/ZWTY_C_WARRANTY_CLAIMS_CDS_VAN.xml"
+					"localUri": "localService/ZWTY_WARRANTY_CLAIM_INQ_ANNO_MDL.xml"
 				}
 			},
 			"localAnnotations": {
@@ -42,8 +42,8 @@
 		},
 		"offline": false,
 		"sourceTemplate": {
-			"id": "ui5template.smarttemplate",
-			"version": "1.40.12"
+			"id": "servicecatalog.connectivityComponent",
+			"version": "0.0.0"
 		}
 	},
 	"sap.ui": {

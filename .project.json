@@ -1,7 +1,9 @@
 {
   "projectType": [
     "sap.watt.saptoolsets.fiori.project.ui5template.smartProject",
-    "sap.watt.uitools.ide.fiori"
+    "sap.watt.uitools.ide.fiori",
+    "sap.watt.uitools.ide.web",
+    "sap.watt.saptoolsets.fiori.project.uiadaptation"
   ],
   "build": {
     "targetFolder": "dist",
@@ -20,6 +22,16 @@
       "templateId": "ui5template.listreportextension",
       "templateVersion": "1.0.0",
       "dateTimeStamp": "Fri, 10 Mar 2017 01:01:11 GMT"
+    },
+    {
+      "templateId": "uiadaptation.uiadaptationpanehtml",
+      "templateVersion": "0.0.0",
+      "dateTimeStamp": "Wed, 03 May 2017 00:12:23 GMT"
+    },
+    {
+      "templateId": "uiadaptation.changespreviewjs",
+      "templateVersion": "0.0.0",
+      "dateTimeStamp": "Wed, 03 May 2017 00:23:25 GMT"
     }
   ],
   "uiadaptation": {

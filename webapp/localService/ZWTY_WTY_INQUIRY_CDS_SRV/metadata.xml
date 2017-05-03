@@ -1,0 +1,113 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='DEC_TRUSTED')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZWTY_WTY_INQUIRY_CDS_SRV" xml:lang="en" sap:schema-version="1">
+            <EntityType Name="Zwty_C_Warranty_ClaimsType" sap:label="Warranty Claims" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="pnguid"/>
+                    <PropertyRef Name="pncnt"/>
+                </Key>
+                <Property Name="pnguid" Type="Edm.Guid" Nullable="false" sap:label="Internal Number" sap:quickinfo="Internal Number of iPPE Node"/>
+                <Property Name="status_Text" Type="Edm.String" MaxLength="40" sap:label="Claim Status" sap:quickinfo="Description Processing Status of a Warranty Claim" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="submittedDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date"/>
+                <Property Name="vin" Type="Edm.String" MaxLength="40" sap:label="Ext. Obj. No." sap:quickinfo="External Object Number"/>
+                <Property Name="engineNumber" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Engine Number"/>
+                <Property Name="serviceDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Repair Date"/>
+                <Property Name="totalMaterial" Type="Edm.Decimal" Precision="14" Scale="3"/>
+                <Property Name="totalExternalServices" Type="Edm.Decimal" Precision="14" Scale="3"/>
+                <Property Name="totalLabour" Type="Edm.Decimal" Precision="14" Scale="3"/>
+                <Property Name="totalHandling" Type="Edm.Decimal" Precision="14" Scale="3"/>
+                <Property Name="totalGST" Type="Edm.Decimal" Precision="14" Scale="3"/>
+                <Property Name="pncnt" Type="Edm.String" Nullable="false" MaxLength="8" sap:display-format="NonNegative" sap:label="Counter" sap:quickinfo="Internal Counter"/>
+                <Property Name="totalClaimCost" Type="Edm.Decimal" Precision="14" Scale="3" sap:unit="currencyCode"/>
+                <Property Name="currencyCode" Type="Edm.String" MaxLength="5" sap:semantics="currency-code"/>
+                <Property Name="paidDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date"/>
+                <Property Name="printTag" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase"/>
+                <Property Name="rcti" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase"/>
+                <Property Name="claimNumber" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Claim" sap:quickinfo="Number of Warranty Claim"/>
+                <Property Name="parnr" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Partner"/>
+                <Property Name="claimType" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:text="claimType_Text" sap:label="Claim Type" sap:quickinfo="Warranty Claim Type (FE)" sap:value-list="standard"/>
+                <Property Name="claimType_Text" Type="Edm.String" MaxLength="40" sap:label="Warranty Claim Type" sap:quickinfo="Description of Warranty Claim Type (FE)" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="claimTypeBE" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Warranty Claim Type"/>
+                <Property Name="repairOrderNumber" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="Repair Order number"/>
+                <Property Name="status" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:text="status_Text" sap:label="Claim Status DP" sap:quickinfo="Warranty Claim Status (FE)"/>
+                <NavigationProperty Name="to_claimStatusText" Relationship="ZWTY_WTY_INQUIRY_CDS_SRV.assoc_8EC77FE7EFF2692E6904A41D9ABF74F1" FromRole="FromRole_assoc_8EC77FE7EFF2692E6904A41D9ABF74F1" ToRole="ToRole_assoc_8EC77FE7EFF2692E6904A41D9ABF74F1"/>
+                <NavigationProperty Name="to_claimTypeText" Relationship="ZWTY_WTY_INQUIRY_CDS_SRV.assoc_0CD72CB107C2CCD141DF664E5DFF4F92" FromRole="FromRole_assoc_0CD72CB107C2CCD141DF664E5DFF4F92" ToRole="ToRole_assoc_0CD72CB107C2CCD141DF664E5DFF4F92"/>
+            </EntityType>
+            <EntityType Name="Zwty_I_Claim_Type_TextType" sap:label="Claim Type Text" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="claimType"/>
+                    <PropertyRef Name="Language"/>
+                </Key>
+                <Property Name="claimType" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Claim Type" sap:quickinfo="Warranty Claim Type (FE)"/>
+                <Property Name="Language" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Language Key"/>
+                <Property Name="claimTypeDescription" Type="Edm.String" MaxLength="40" sap:label="Warranty Claim Type" sap:quickinfo="Description of Warranty Claim Type (FE)"/>
+            </EntityType>
+            <EntityType Name="Zwty_I_Status_TextType" sap:label="Claim Status Text" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="claimState"/>
+                    <PropertyRef Name="Language"/>
+                </Key>
+                <Property Name="claimState" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Claim Status DP" sap:quickinfo="Warranty Claim Status (FE)"/>
+                <Property Name="Language" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Language Key"/>
+                <Property Name="claimStateDescription" Type="Edm.String" MaxLength="40" sap:label="Claim Status" sap:quickinfo="Description Processing Status of a Warranty Claim"/>
+            </EntityType>
+            <Association Name="assoc_0CD72CB107C2CCD141DF664E5DFF4F92" sap:content-version="1">
+                <End Type="ZWTY_WTY_INQUIRY_CDS_SRV.Zwty_C_Warranty_ClaimsType" Multiplicity="1" Role="FromRole_assoc_0CD72CB107C2CCD141DF664E5DFF4F92"/>
+                <End Type="ZWTY_WTY_INQUIRY_CDS_SRV.Zwty_I_Claim_Type_TextType" Multiplicity="*" Role="ToRole_assoc_0CD72CB107C2CCD141DF664E5DFF4F92"/>
+            </Association>
+            <Association Name="assoc_8EC77FE7EFF2692E6904A41D9ABF74F1" sap:content-version="1">
+                <End Type="ZWTY_WTY_INQUIRY_CDS_SRV.Zwty_C_Warranty_ClaimsType" Multiplicity="1" Role="FromRole_assoc_8EC77FE7EFF2692E6904A41D9ABF74F1"/>
+                <End Type="ZWTY_WTY_INQUIRY_CDS_SRV.Zwty_I_Status_TextType" Multiplicity="*" Role="ToRole_assoc_8EC77FE7EFF2692E6904A41D9ABF74F1"/>
+            </Association>
+            <EntityContainer Name="ZWTY_WTY_INQUIRY_CDS_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="Zwty_C_Warranty_Claims" EntityType="ZWTY_WTY_INQUIRY_CDS_SRV.Zwty_C_Warranty_ClaimsType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="Zwty_I_Claim_Type_Text" EntityType="ZWTY_WTY_INQUIRY_CDS_SRV.Zwty_I_Claim_Type_TextType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="Zwty_I_Status_Text" EntityType="ZWTY_WTY_INQUIRY_CDS_SRV.Zwty_I_Status_TextType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <AssociationSet Name="assoc_0CD72CB107C2CCD141DF664E5DFF4F92" Association="ZWTY_WTY_INQUIRY_CDS_SRV.assoc_0CD72CB107C2CCD141DF664E5DFF4F92" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="Zwty_C_Warranty_Claims" Role="FromRole_assoc_0CD72CB107C2CCD141DF664E5DFF4F92"/>
+                    <End EntitySet="Zwty_I_Claim_Type_Text" Role="ToRole_assoc_0CD72CB107C2CCD141DF664E5DFF4F92"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_8EC77FE7EFF2692E6904A41D9ABF74F1" Association="ZWTY_WTY_INQUIRY_CDS_SRV.assoc_8EC77FE7EFF2692E6904A41D9ABF74F1" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="Zwty_C_Warranty_Claims" Role="FromRole_assoc_8EC77FE7EFF2692E6904A41D9ABF74F1"/>
+                    <End EntitySet="Zwty_I_Status_Text" Role="ToRole_assoc_8EC77FE7EFF2692E6904A41D9ABF74F1"/>
+                </AssociationSet>
+            </EntityContainer>
+            <Annotations
+                xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZWTY_WTY_INQUIRY_CDS_SRV.Zwty_C_Warranty_ClaimsType/claimType">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Claim Type Text"/>
+                        <PropertyValue Property="CollectionPath" String="Zwty_I_Claim_Type_Text"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="claimType"/>
+                                    <PropertyValue Property="ValueListProperty" String="claimType"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Language"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="claimTypeDescription"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <atom:link
+                xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZWTY_WTY_INQUIRY_CDS_SRV/$metadata"/>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZWTY_WTY_INQUIRY_CDS_SRV/$metadata"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>

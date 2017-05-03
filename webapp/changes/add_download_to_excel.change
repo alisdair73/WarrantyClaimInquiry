@@ -1,0 +1,31 @@
+{
+	"fileName": "add_download_to_excel",
+	"fileType": "change",
+	"changeType": "propertyChange",
+	"reference": "warranty_claim_inquiry.Component",
+	"packageName": "$TMP",
+	"content": {
+		"property": "useExportToExcel",
+		"oldValue": false,
+		"newValue": true
+	},
+	"selector": {
+		"id": "warranty_claim_inquiry::sap.suite.ui.generic.template.ListReport.view.ListReport::Zwty_C_Warranty_Claims--listReport",
+		"type": "sap.ui.comp.smarttable.SmartTable",
+		"idIsLocal": false
+	},
+	"layer": "VENDOR",
+	"texts": {},
+	"namespace": "apps/warranty_claim_inquiry/changes/",
+	"creation": "2017-05-03T00:13:08.700Z",
+	"originalLanguage": "EN",
+	"conditions": {},
+	"context": "",
+	"support": {
+		"generator": "Change.createInitialFileContent",
+		"service": "",
+		"user": "",
+		"sapui5Version": "1.44.11"
+	},
+	"dependentSelector": {}
+}
