@@ -97,10 +97,6 @@
 				"type": "sap.ui.model.resource.ResourceModel",
 				"uri": "i18n/ListReport/Zwty_C_Warranty_Claims/i18n.properties"
 			},
-			"i18n|sap.suite.ui.generic.template.ObjectPage|Zwty_C_Warranty_Claims": {
-				"type": "sap.ui.model.resource.ResourceModel",
-				"uri": "i18n/ObjectPage/Zwty_C_Warranty_Claims/i18n.properties"
-			},
 			"": {
 				"dataSource": "mainService",
 				"settings": {
@@ -146,15 +142,7 @@
 				"component": {
 					"name": "sap.suite.ui.generic.template.ListReport",
 					"list": true
-				},
-				"pages": [
-					{
-						"entitySet": "Zwty_C_Warranty_Claims",
-						"component": {
-							"name": "sap.suite.ui.generic.template.ObjectPage"
-						}
-					}
-				]
+				}
 			}
 		]
 	},

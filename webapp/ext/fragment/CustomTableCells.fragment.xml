@@ -1,4 +1,18 @@
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
-    <Button id="tag" icon="sap-icon://print" tooltip="{i18n>printTAG}" enabled="true" press="onPrintTAG"></Button>
-    <Button id="rcti" icon="sap-icon://pdf-attachment" tooltip="{i18n>printRCTI}" enabled="true" press="onPrintRCTI"></Button>
+    <Button 
+    	id="tag" 
+    	icon="sap-icon://print" 
+    	tooltip="{i18n>printTAG}" 
+    	enabled="true" 
+    	press="onPrintTAG"
+    	visible="{= ${status} !== '0001'}"
+    />
+    <Button 
+    	id="rcti" 
+    	icon="sap-icon://pdf-attachment" 
+    	tooltip="{i18n>printRCTI}" 
+    	enabled="true" 
+    	press="onPrintRCTI"
+    	visible="{= ${status} !== '0001' &amp;&amp; ${status} !== '0002' &amp;&amp; ${status} !== '0005'}"
+    />
 </core:FragmentDefinition>
