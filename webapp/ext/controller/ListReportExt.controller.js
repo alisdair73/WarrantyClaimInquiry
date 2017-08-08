@@ -12,6 +12,10 @@ sap.ui.controller("warranty_claim_inquiry.ext.controller.ListReportExt", {
 			
 		sap.m.URLHelper.redirect("/sap/opu/odata/sap/ZWTY_WARRANTY_CLAIMS_SRV/DocumentSet(ClaimNumber='" +
 			+ warrantyClaimNumber + "',DocumentType='TAG')/$value", true);
+	},
+	
+	onRCTIMenu: function(event){
+		
 	}
 	
 });

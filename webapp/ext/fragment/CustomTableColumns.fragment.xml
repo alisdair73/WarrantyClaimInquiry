@@ -8,7 +8,7 @@
 	<Column id="rctiColumn" hAlign="Right">
 		<Text text="RCTI"/>
 		<customData>
-			<core:CustomData key="p13nData" value='\{"columnKey": "rcti",  "columnIndex" : "99"}'/>
+			<core:CustomData key="p13nData" value='\{"columnKey": "rcti_docs",  "columnIndex" : "99"}'/>
 		</customData>
 	</Column>	
 </core:FragmentDefinition>
