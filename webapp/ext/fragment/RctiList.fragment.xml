@@ -1,0 +1,15 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog 
+		title="RCTI"
+	>
+		<content>
+			<List id="RCTIItems"/>
+		</content>
+		<buttons>
+			<Button text="Cancel" press="onCloseRCTI" icon="sap-icon://sys-cancel"/>
+		</buttons>
+		
+		
+		
+	</Dialog>
+</core:FragmentDefinition>

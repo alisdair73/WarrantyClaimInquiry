@@ -7,20 +7,12 @@
     	press="onPrintTAG"
     	visible="{= ${status} !== '0001'}"
     />
-    <MenuButton 
+    <Button
+        id="rcti"
         icon="sap-icon://pdf-attachment" 
         tooltip="{i18n>printRCTI}"
-        buttonMode="Regular"
+        press="onShowRCTIDocuments"
         visible="{= ${rcti} === 'X'}"
-    >
-    	<menu>
-	        <Menu itemSelected="onRCTIMenu" >
-				<items>
-				    <MenuItem text="Edit" icon="sap-icon://edit" />
-				    <MenuItem text="Save" icon="sap-icon://save" />
-				    <MenuItem text="Open" icon="sap-icon://open-folder" />
-				</items>
-	        </Menu>
-        </menu>
-	</MenuButton>
+    />  
+    
 </core:FragmentDefinition>
