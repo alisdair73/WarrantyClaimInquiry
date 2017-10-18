@@ -1,5 +1,27 @@
 sap.ui.controller("warranty_claim_inquiry.ext.controller.ListReportExt", {
 
+    onInitSmartFilterBarExtension: function(oEvent){
+    	
+    	var today = new Date();
+    	var todayMinusOneYear = new Date();
+    	todayMinusOneYear.setFullYear(today.getFullYear() - 1);
+    	
+		var customFilter = {"submittedDate":{
+								"ranges":[{
+									"exclude":false,
+									"operation":"BT",
+									"keyField":"submittedDate",
+									"value1": todayMinusOneYear,
+									"value2": today
+								}],
+								"items":[],
+								"value":null
+							}};
+	    	
+		oEvent.getSource().setFilterData(customFilter,true);
+ 
+    },
+        
 	onPrintRCTI: function(event){
 		
 		var documentNumber = event.getParameter("item").getText();
