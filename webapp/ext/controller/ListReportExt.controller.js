@@ -2,8 +2,8 @@ sap.ui.controller("warranty_claim_inquiry.ext.controller.ListReportExt", {
 
     onInitSmartFilterBarExtension: function(oEvent){
     	
-    	var today = new Date();
-    	var todayMinusOneYear = new Date();
+    	var today = new Date(new Date().setHours(0, 0, 0, 0));
+    	var todayMinusOneYear = new Date(new Date().setHours(0, 0, 0, 0));
     	todayMinusOneYear.setFullYear(today.getFullYear() - 1);
     	
 		var customFilter = {"submittedDate":{
@@ -19,6 +19,9 @@ sap.ui.controller("warranty_claim_inquiry.ext.controller.ListReportExt", {
 							}};
 	    	
 		oEvent.getSource().setFilterData(customFilter,true);
+		
+		//Clear startup parameters as these override the filter 
+		this.getOwnerComponent().oContainer.getParent().getParent().oComponentData.startupParameters = {};
  
     },
         
