@@ -7,7 +7,7 @@
 	"content": {
 		"property": "useExportToExcel",
 		"oldValue": false,
-		"newValue": true
+		"newValue": false
 	},
 	"selector": {
 		"id": "warranty_claim_inquiry::sap.suite.ui.generic.template.ListReport.view.ListReport::Zwty_C_Warranty_Claims--listReport",

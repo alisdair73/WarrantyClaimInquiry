@@ -9,10 +9,10 @@
     />
     <Button
         id="rcti"
-        icon="sap-icon://pdf-attachment" 
+        icon="{= ${rcti} === 'D' ? 'sap-icon://complete':'sap-icon://pdf-attachment'}"
+        type="{= ${rcti} === 'D' ? 'Emphasized':'Default'}"
         tooltip="{i18n>printRCTI}"
         press="onShowRCTIDocuments"
-        visible="{= ${rcti} === 'X'}"
+        visible="{= ${rcti} !== ''}"
     />  
-    
 </core:FragmentDefinition>

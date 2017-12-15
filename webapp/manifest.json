@@ -124,7 +124,20 @@
 				},
 				"sap.ui.controllerExtensions": {
 					"sap.suite.ui.generic.template.ListReport.view.ListReport": {
-						"controllerName": "warranty_claim_inquiry.ext.controller.ListReportExt"
+						"controllerName": "warranty_claim_inquiry.ext.controller.ListReportExt",
+						"sap.ui.generic.app": {
+							"Zwty_C_Warranty_Claims": {
+								"EntitySet": "Zwty_C_Warranty_Claims",
+								"Actions": {
+									"download": {
+										"id": "downloadToExcel",
+										"text": "",
+										"press": "onDownload",
+										"requiresSelection": false
+									}
+								}
+							}
+						}
 					}
 				}
 			}
