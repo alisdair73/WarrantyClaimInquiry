@@ -42,7 +42,7 @@ sap.ui.controller("warranty_claim_inquiry.ext.controller.ListReportExt", {
 		var documentNumber = event.getParameter("item").getText();
 			
 		sap.m.URLHelper.redirect("/sap/opu/odata/sap/ZWTY_WARRANTY_CLAIMS_SRV/DocumentSet(DocumentNumber='" + 
-			documentNumber + "',DocumentType='RCTI')/$value", true);
+			documentNumber + "',DocumentType='ZRCT',LogResult=true)/$value", true);
 			
 		var downloadedAttachments = event.getSource().getItems().filter(function(attachment){
 			return attachment.getIcon() === "sap-icon://complete" && attachment.getText() !== documentNumber;
@@ -62,7 +62,7 @@ sap.ui.controller("warranty_claim_inquiry.ext.controller.ListReportExt", {
 		var warrantyClaimNumber = oEvent.getSource().getParent().getBindingContext().getObject().claimNumber;
 			
 		sap.m.URLHelper.redirect("/sap/opu/odata/sap/ZWTY_WARRANTY_CLAIMS_SRV/DocumentSet(DocumentNumber='" +
-			+ warrantyClaimNumber + "',DocumentType='TAG')/$value", true);
+			+ warrantyClaimNumber + "',DocumentType='ZPTA')/$value", true);
 	},
 	
 	onShowRCTIDocuments: function(event){
