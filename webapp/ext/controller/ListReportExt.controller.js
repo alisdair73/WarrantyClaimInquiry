@@ -62,7 +62,7 @@ sap.ui.controller("warranty_claim_inquiry.ext.controller.ListReportExt", {
 		var warrantyClaimNumber = oEvent.getSource().getParent().getBindingContext().getObject().claimNumber;
 			
 		sap.m.URLHelper.redirect("/sap/opu/odata/sap/ZWTY_WARRANTY_CLAIMS_SRV/DocumentSet(DocumentNumber='" +
-			+ warrantyClaimNumber + "',DocumentType='ZPTA')/$value", true);
+			+ warrantyClaimNumber + "',DocumentType='ZPTA',LogResult=false)/$value", true);
 	},
 	
 	onShowRCTIDocuments: function(event){
