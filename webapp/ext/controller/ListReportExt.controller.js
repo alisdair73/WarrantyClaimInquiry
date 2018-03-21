@@ -65,6 +65,27 @@ sap.ui.controller("warranty_claim_inquiry.ext.controller.ListReportExt", {
 			+ warrantyClaimNumber + "',DocumentType='ZPTA',LogResult=false)/$value", true);
 	},
 	
+/*    onBeforeRebindTableExtension: function(oEvent) {
+	
+
+		var oSmartFilterBar = this.byId(oEvent.getSource().getSmartFilterId());
+		var vinCriteria = oSmartFilterBar.getModel("fi1t3rM0d31").getProperty("/vin");
+		
+		vinCriteria.ranges.forEach(function(range){
+			if(range.value1){
+				range.value1 = range.value1.toUpperCase();
+			}	
+			if(range.value2){
+				range.value2 = range.value2.toUpperCase();
+			}
+			if(range.tokentext){
+				range.tokentext = range.tokentext.toUpperCase();
+			}
+		});
+		oSmartFilterBar.getModel("fi1t3rM0d31").setProperty("/vin",vinCriteria);
+	
+    },*/
+		
 	onShowRCTIDocuments: function(event){
 
 		// create menu only once
