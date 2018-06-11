@@ -129,6 +129,12 @@
 							"Zwty_C_Warranty_Claims": {
 								"EntitySet": "Zwty_C_Warranty_Claims",
 								"Actions": {
+									"newWarrantyClaim": {
+										"id": "newWarrantyClaim",
+										"text": "Create new Warranty Claim",
+										"press": "onNewWarrantyClaim",
+										"requiresSelection": false
+									},
 									"download": {
 										"id": "downloadToExcel",
 										"text": "",

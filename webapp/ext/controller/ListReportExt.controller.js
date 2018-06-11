@@ -114,6 +114,19 @@ sap.ui.controller("warranty_claim_inquiry.ext.controller.ListReportExt", {
 		
 	},
 	
+	onNewWarrantyClaim: function(event){
+	
+		var crossAppNavigator = sap.ushell.Container.getService("CrossApplicationNavigation");
+
+		// Navigate back to FLP home
+		crossAppNavigator.toExternal({
+			target: {
+				shellHash: "#DealerWarrantyClaim-create"
+			}
+		});
+			
+	},
+	
 	onDownload: function(event){
 
 		var smartTable = this.byId("listReport");
